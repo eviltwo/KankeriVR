@@ -8,6 +8,7 @@ public class PlayerScript : MonoBehaviour
 	float DashSpeed = 12.0f;
 	Rigidbody rb;
 	bool onGround = false;
+	bool touchBoss = false;
 
 	// Use this for initialization
 	void Start ()
@@ -25,7 +26,7 @@ public class PlayerScript : MonoBehaviour
 		var cameraForward = Vector3.Scale (Camera.main.transform.forward,
 		                                    new Vector3 (1, 0, 1)).normalized;
 		Vector3 direction;
-		if (Input.GetAxis ("Fire1")==1) {
+		if (Input.GetAxis ("Fire1") == 1) {
 			direction = cameraForward * Input.GetAxis ("Vertical") * DashSpeed
 				+ Camera.main.transform.right * Input.GetAxis ("Horizontal") * DashSpeed;
 		} else {
@@ -42,10 +43,23 @@ public class PlayerScript : MonoBehaviour
 				onGround = false;
 			}
 		}
+		if(touchBoss){
+			Goal ();
+		}
 	}
 
-	void OnTriggerStay (Collider collider)
-	{
+	void OnTriggerStay (Collider collider){
 		onGround = true;
+
+	}
+
+	 void OnTriggerEnter(Collider collider){
+		if (collider.tag == "Boss") {
+			touchBoss=true;
+		}
+	}
+
+	void Goal(){
+		print ("win!!");
 	}
 }
