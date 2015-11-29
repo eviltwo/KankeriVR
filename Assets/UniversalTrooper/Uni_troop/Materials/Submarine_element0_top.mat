@@ -1,0 +1,108 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Submarine_element0_top
+  m_Shader: {fileID: 4800000, guid: 433618ae026600046bdfcc29584ebd0c, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 5
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  m_SavedProperties:
+    serializedVersion: 2
+    m_TexEnvs:
+      data:
+        first:
+          name: _MainTex
+        second:
+          m_Texture: {fileID: 2800000, guid: ff01a060f7621af46bb27242be9fc5dd, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _BumpMap
+        second:
+          m_Texture: {fileID: 2800000, guid: 8368088549412474d850a5911f7e3f35, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _diffuse
+        second:
+          m_Texture: {fileID: 2800000, guid: 9edb18cd3484bef46abc43850ef6b421, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _specular
+        second:
+          m_Texture: {fileID: 2800000, guid: 3f05a98896f25ed418cd1ca286ff17ca, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _normal
+        second:
+          m_Texture: {fileID: 2800000, guid: 8368088549412474d850a5911f7e3f35, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _Cube
+        second:
+          m_Texture: {fileID: 8900000, guid: f191cdac87c3cbc4181fe7005accd635, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _Spec_Gloss_Reflec_Masks
+        second:
+          m_Texture: {fileID: 2800000, guid: 2b5b3fe38ebac0341996198ff246a66d, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+    m_Floats:
+      data:
+        first:
+          name: _Reflection
+        second: 1
+      data:
+        first:
+          name: _Cutoff
+        second: 0
+      data:
+        first:
+          name: _Shininess
+        second: .186063275
+      data:
+        first:
+          name: _glossiness
+        second: 4.03846169
+      data:
+        first:
+          name: _Gloss
+        second: .74626863
+      data:
+        first:
+          name: _FrezPow
+        second: 2
+      data:
+        first:
+          name: _FrezFalloff
+        second: 10
+      data:
+        first:
+          name: _Metalics
+        second: 1
+    m_Colors:
+      data:
+        first:
+          name: _Color
+        second: {r: .588, g: .588, b: .588, a: 1}
+      data:
+        first:
+          name: _SpecColor
+        second: {r: .552238822, g: .552238822, b: .552238822, a: 1}

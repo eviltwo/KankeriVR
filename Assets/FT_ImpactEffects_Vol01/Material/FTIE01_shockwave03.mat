@@ -1,0 +1,155 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: FTIE01_shockwave03
+  m_Shader: {fileID: 4800000, guid: 12e678cdaedb86544b5a529d80acdd38, type: 3}
+  m_ShaderKeywords: _USE_ALPHACLIP_ON _USE_FRESNEL_ON
+  m_LightmapFlags: 5
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  m_SavedProperties:
+    serializedVersion: 2
+    m_TexEnvs:
+      data:
+        first:
+          name: _MainTex
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _Texture
+        second:
+          m_Texture: {fileID: 2800000, guid: 2165f2080b1d9bf4ba12668b90f45957, type: 3}
+          m_Scale: {x: 3, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _Normal
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _node_8575
+        second:
+          m_Texture: {fileID: 2800000, guid: 2165f2080b1d9bf4ba12668b90f45957, type: 3}
+          m_Scale: {x: 3, y: 1}
+          m_Offset: {x: 0, y: 0}
+    m_Floats:
+      data:
+        first:
+          name: _Cutoff
+        second: .5
+      data:
+        first:
+          name: _Emission
+        second: 20
+      data:
+        first:
+          name: _X_speed
+        second: 0
+      data:
+        first:
+          name: _Y_speed
+        second: 4
+      data:
+        first:
+          name: _Use_Fresnel
+        second: 1
+      data:
+        first:
+          name: _Fresnel_Strength
+        second: 5
+      data:
+        first:
+          name: _Use_SoftPaticle
+        second: 0
+      data:
+        first:
+          name: _SoftParticle_Value
+        second: 0
+      data:
+        first:
+          name: _UV_Rows
+        second: 4
+      data:
+        first:
+          name: _UV_Columns
+        second: 4
+      data:
+        first:
+          name: _Use_UVanim
+        second: 0
+      data:
+        first:
+          name: _UV_AnimSpeed
+        second: 1
+      data:
+        first:
+          name: _Use_Panner
+        second: 0
+      data:
+        first:
+          name: _PannerSpeed_X
+        second: 0
+      data:
+        first:
+          name: _PannerSpeed_Y
+        second: 0
+      data:
+        first:
+          name: _Use_AlphaClip
+        second: 1
+      data:
+        first:
+          name: _AlphaClipAnimation
+        second: 1
+      data:
+        first:
+          name: _Use_Displace
+        second: 0
+      data:
+        first:
+          name: _DisplaceStrength
+        second: .300000012
+      data:
+        first:
+          name: _Fresnel_Emission
+        second: 1
+      data:
+        first:
+          name: _Fresnel_Range
+        second: 5
+      data:
+        first:
+          name: _node_5788
+        second: 0
+      data:
+        first:
+          name: _node_6571
+        second: 0
+      data:
+        first:
+          name: _node_3093
+        second: 0
+    m_Colors:
+      data:
+        first:
+          name: _Color
+        second: {r: .242647037, g: .498810589, b: .99999994, a: 1}
+      data:
+        first:
+          name: _MainColor
+        second: {r: 1, g: .352941185, b: 0, a: 1}
+      data:
+        first:
+          name: _FresnelColor
+        second: {r: .441176504, g: .679498374, b: 1, a: 1}
