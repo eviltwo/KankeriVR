@@ -4,7 +4,7 @@ using System.Collections;
 public class PlayerScript : MonoBehaviour
 {
     
-	float nomalSpeed = 1.0f;
+	float nomalSpeed = 4.0f;
 	float DashSpeed = 12.0f;
 	Rigidbody rb;
 	bool onGround = false;
@@ -21,7 +21,7 @@ public class PlayerScript : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
-		if (Energy < 5) {
+		if (Energy < 5.0f) {
 			Energy += Time.deltaTime;
 		}
 		
