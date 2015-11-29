@@ -20,7 +20,7 @@ public class LookEnemy : MonoBehaviour
 
     void Start()
     {
-        AddEnemy(GameObject.FindWithTag("Player"));
+        //AddEnemy(GameObject.FindWithTag("Player"));
         RespawnPoint.Add(GameObject.FindWithTag("respawn"));
     }
 

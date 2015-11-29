@@ -4,13 +4,16 @@ using UnityEngine.UI;
 using System.Collections;
 
 public class SpawnManager : NetworkManager {
+	LookEnemy bossLook;
 	public override void OnServerAddPlayer(NetworkConnection conn, short playerControllerId)
 	{
 		GameObject player;
 		if (conn.connectionId < 0) {
 			player = (GameObject)GameObject.Instantiate (spawnPrefabs[1], Vector3.zero, Quaternion.identity);
+			bossLook = player.GetComponentInChildren<LookEnemy> ();
 		} else {
 			player = (GameObject)GameObject.Instantiate (spawnPrefabs[0], base.startPositions[Random.Range(0,base.startPositions.Count)].position, Quaternion.identity);
+			bossLook.AddEnemy (player);
 		}
 		NetworkServer.AddPlayerForConnection(conn, player, playerControllerId);
 	}
