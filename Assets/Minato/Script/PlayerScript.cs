@@ -4,13 +4,13 @@ using System.Collections;
 public class PlayerScript : MonoBehaviour
 {
     
-	float nomalSpeed = 4.0f;
+	float nomalSpeed = 1.0f;
 	float DashSpeed = 12.0f;
 	Rigidbody rb;
 	bool onGround = false;
 	bool touchBoss = false;
-
 	public Camera myCamera;
+	float Energy = 5.0f;
 
 	// Use this for initialization
 	void Start ()
@@ -21,27 +21,35 @@ public class PlayerScript : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
-		//float x = Input.GetAxis ("Horizontal");
-		//float z = Input.GetAxis ("Vertical");
-		//Vector3 direction = new Vector3 (x*moveSpeed, rb.velocity.y, z*moveSpeed);
-
+		if (Energy < 5) {
+			Energy += Time.deltaTime;
+		}
+		
 		var cameraForward = Vector3.Scale (myCamera.transform.forward,
 		                                    new Vector3 (1, 0, 1)).normalized;
-		Vector3 direction;
+		Vector3 direction = Walk (cameraForward);
+
 		if (Input.GetAxis ("Fire1") == 1) {
-			direction = cameraForward * Input.GetAxis ("Vertical") * DashSpeed
-				+ myCamera.transform.right * Input.GetAxis ("Horizontal") * DashSpeed;
+			if (Energy > 1) {
+				direction = Dash (cameraForward);
+				Energy -= Time.deltaTime; 
+			} else {
+				if (Energy < 5) {
+					direction = Walk (cameraForward);
+					Energy += Time.deltaTime;
+				}
+			}
 		} else {
-			direction = cameraForward * Input.GetAxis ("Vertical") * nomalSpeed
-				+ myCamera.transform.right * Input.GetAxis ("Horizontal") * nomalSpeed;
+			direction = Walk (cameraForward);
 		}
+
 		direction.y = rb.velocity.y;
 		rb.velocity = direction;
 
 		if (onGround) {
 			if (Input.GetKeyDown ("space")) {
 				direction.y = 320f;
-				rb.AddForce (direction);
+				rb.AddForce (direction, ForceMode.Force);
 				onGround = false;
 			}
 		}
@@ -51,6 +59,20 @@ public class PlayerScript : MonoBehaviour
 
 	}
 
+	Vector3 Walk (Vector3 cameraForward)
+	{
+		Vector3 direction = cameraForward * Input.GetAxis ("Vertical") * nomalSpeed
+			+ myCamera.transform.right * Input.GetAxis ("Horizontal") * nomalSpeed;
+		return direction;
+	}
+
+	Vector3 Dash (Vector3 cameraForward)
+	{
+		Vector3 direction = cameraForward * Input.GetAxis ("Vertical") * DashSpeed
+			+ myCamera.transform.right * Input.GetAxis ("Horizontal") * DashSpeed;
+		return direction;
+	}
+	
 	void OnTriggerStay (Collider collider)
 	{
 		onGround = true;
