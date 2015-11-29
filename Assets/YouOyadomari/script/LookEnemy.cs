@@ -18,7 +18,7 @@ public class LookEnemy : MonoBehaviour
 
     void Start()
     {
-        AddEnemy(GameObject.FindWithTag("enemy"));
+        AddEnemy(GameObject.FindWithTag("Player"));
     }
 
     //ループ
@@ -57,7 +57,7 @@ public class LookEnemy : MonoBehaviour
             {
                 if (Physics.Raycast(transform.position , (Enemy[i].transform.position - transform.position).normalized ,out hit))
                 {
-                    if (hit.transform.tag != "enemy")
+                    if (hit.transform.tag != "Player")
                     {
                         Enemyflg[i] = 0;
                     }
