@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.Networking;
 
 public class LookEnemy : MonoBehaviour
 {
@@ -107,6 +108,12 @@ public class LookEnemy : MonoBehaviour
     public void VanishEnemy(int a , int b)
     {
         Instantiate(EffectPrefab, Enemy[a].transform.position, Quaternion.identity);
-        Enemy[a].transform.position = RespawnPoint[b].transform.position;
+		Enemy [a].transform.position = new Vector3 (
+			Random.Range (-10, 10),
+			1,
+			Random.Range (-10, 10));
+		
+		NetworkManager.Destroy (Enemy [a]);
+		//RespawnPoint[b].transform.position;
     }
 }

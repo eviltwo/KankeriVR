@@ -51,6 +51,7 @@ GameObject:
   - 114: {fileID: 11411258}
   - 114: {fileID: 11471482}
   - 114: {fileID: 11470602}
+  - 114: {fileID: 11412728}
   m_Layer: 0
   m_Name: Boss_main
   m_TagString: Boss
@@ -299,6 +300,17 @@ MonoBehaviour:
     i15: 60
   m_ServerOnly: 0
   m_LocalPlayerAuthority: 1
+--- !u!114 &11412728
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 114054}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8f95cf3d83f14039a9cfc03338dc491, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11425274
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -412,7 +424,7 @@ MonoBehaviour:
   EnemyCheckflg: 
   EnemyWaitTime: 
   LookEnemyflg: 
-  EffectPrefab: {fileID: 0}
+  EffectPrefab: {fileID: 142318, guid: be424b3258e69a046ae0616ed061761b, type: 2}
 --- !u!114 &11470602
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -471,7 +483,11 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: EffectPrefab
+      value: 
+      objectReference: {fileID: 142318, guid: be424b3258e69a046ae0616ed061761b, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 114054}
