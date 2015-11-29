@@ -9,6 +9,7 @@ public class PlayerScript : MonoBehaviour
 	Rigidbody rb;
 	bool onGround = false;
 	bool touchBoss = false;
+
 	public Camera myCamera;
 
 	// Use this for initialization
@@ -44,23 +45,27 @@ public class PlayerScript : MonoBehaviour
 				onGround = false;
 			}
 		}
-		if(touchBoss){
+		if (touchBoss) {
 			Goal ();
 		}
+
 	}
 
-	void OnTriggerStay (Collider collider){
+	void OnTriggerStay (Collider collider)
+	{
 		onGround = true;
 
 	}
 	
-	void OnCollisionEnter(Collision collider){
+	void OnCollisionEnter (Collision collider)
+	{
 		if (collider.gameObject.tag == "Boss") {
-			touchBoss=true;
+			touchBoss = true;
 		}
 	}
 
-	void Goal(){
+	void Goal ()
+	{
 		print ("win!!");
 	}
 }
