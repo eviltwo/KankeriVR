@@ -29,10 +29,10 @@ public class PlayerScript : MonoBehaviour
 		Vector3 direction;
 		if (Input.GetAxis ("Fire1") == 1) {
 			direction = cameraForward * Input.GetAxis ("Vertical") * DashSpeed
-				+ Camera.main.transform.right * Input.GetAxis ("Horizontal") * DashSpeed;
+				+ myCamera.transform.right * Input.GetAxis ("Horizontal") * DashSpeed;
 		} else {
 			direction = cameraForward * Input.GetAxis ("Vertical") * nomalSpeed
-				+ Camera.main.transform.right * Input.GetAxis ("Horizontal") * nomalSpeed;
+				+ myCamera.transform.right * Input.GetAxis ("Horizontal") * nomalSpeed;
 		}
 		direction.y = rb.velocity.y;
 		rb.velocity = direction;
