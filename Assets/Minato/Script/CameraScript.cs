@@ -26,7 +26,7 @@ public class CameraScript : MonoBehaviour
 		this.transform.position = newPosition;
 
 		// look at enemy everytime
-		transform.LookAt (Target);
+		transform.LookAt (Vector3.zero);
 
 	}
 }
