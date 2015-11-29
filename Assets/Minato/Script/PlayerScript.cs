@@ -52,9 +52,9 @@ public class PlayerScript : MonoBehaviour
 		onGround = true;
 
 	}
-
-	 void OnTriggerEnter(Collider collider){
-		if (collider.tag == "Boss") {
+	
+	void OnCollisionEnter(Collision collider){
+		if (collider.gameObject.tag == "Boss") {
 			touchBoss=true;
 		}
 	}
