@@ -9,6 +9,7 @@ public class PlayerScript : MonoBehaviour
 	Rigidbody rb;
 	bool onGround = false;
 	bool touchBoss = false;
+	public Camera myCamera;
 
 	// Use this for initialization
 	void Start ()
@@ -23,7 +24,7 @@ public class PlayerScript : MonoBehaviour
 		//float z = Input.GetAxis ("Vertical");
 		//Vector3 direction = new Vector3 (x*moveSpeed, rb.velocity.y, z*moveSpeed);
 
-		var cameraForward = Vector3.Scale (Camera.main.transform.forward,
+		var cameraForward = Vector3.Scale (myCamera.transform.forward,
 		                                    new Vector3 (1, 0, 1)).normalized;
 		Vector3 direction;
 		if (Input.GetAxis ("Fire1") == 1) {
