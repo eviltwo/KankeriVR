@@ -7,6 +7,7 @@ TagManager:
   - Boss
   - enemy
   - PLayerCamera
+  - respawn
   layers:
   - Default
   - TransparentFX

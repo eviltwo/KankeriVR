@@ -7,6 +7,7 @@ public class LookEnemy : MonoBehaviour
 
     public GameObject Camera;//カメラ
     public GameObject Player;//プレイヤー
+    public List<GameObject> RespawnPoint = new List<GameObject>();//リスポーン地点
     public List<GameObject> Enemy = new List<GameObject>();//プレイヤー
     public Vector3 Forward;//カメラの向いている方向
     public Vector3 CheckPos; //チェックするための位置
@@ -15,10 +16,12 @@ public class LookEnemy : MonoBehaviour
     public List<int> EnemyCheckflg = new List<int>();//チェックフラグ
     public List<int> EnemyWaitTime = new List<int>();//待ち時間
     public List<int> LookEnemyflg = new List<int>();//プレイヤー発見フラグ
+    public GameObject EffectPrefab;
 
     void Start()
     {
         AddEnemy(GameObject.FindWithTag("Player"));
+        RespawnPoint.Add(GameObject.FindWithTag("respawn"));
     }
 
     //ループ
@@ -51,11 +54,11 @@ public class LookEnemy : MonoBehaviour
             }
         }
 
-        for(int i = 0; i < Enemy.Count; i++)
+        for (int i = 0; i < Enemy.Count; i++)
         {
             if (Enemyflg[i] == 1)
             {
-                if (Physics.Raycast(transform.position , (Enemy[i].transform.position - transform.position).normalized ,out hit))
+                if (Physics.Raycast(transform.position, (Enemy[i].transform.position - transform.position).normalized, out hit))
                 {
                     if (hit.transform.tag != "Player")
                     {
@@ -82,6 +85,14 @@ public class LookEnemy : MonoBehaviour
                 LookEnemyflg[i] = 0;
             }
         }
+
+        for (int i = 0; i < Enemy.Count; i++)
+        {
+            if (LookEnemyflg[i] == 1)
+            {
+                VanishEnemy(i , Random.Range(0 , 1));
+            }
+        }
     }
 
     public void AddEnemy(GameObject enemy)
@@ -91,5 +102,11 @@ public class LookEnemy : MonoBehaviour
         Enemyflg.Add(0);
         EnemyWaitTime.Add(0);
         LookEnemyflg.Add(0);
+    }
+
+    public void VanishEnemy(int a , int b)
+    {
+        Instantiate(EffectPrefab, Enemy[a].transform.position, Quaternion.identity);
+        Enemy[a].transform.position = RespawnPoint[b].transform.position;
     }
 }
